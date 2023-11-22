@@ -21,7 +21,7 @@ data "aws_subnet" "default" {
 resource "aws_instance" "web1" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  subnet_id     = data.aws_subnet.default.id
+  subnet_id     = data.terraform_remote_state.sg_csv.outputs.sbn_id
   vpc_security_group_ids = [data.terraform_remote_state.sg_csv.outputs.sg_id]
   associate_public_ip_address = true
   key_name      = var.ec2_key
