@@ -1,0 +1,5 @@
+name,rule_type,protocol,from_port,to_port,cidr,description
+rule1,ingress,tcp,22,22,0.0.0.0/0,ssh access
+rule2,ingress,tcp,80,80,0.0.0.0/0,web server
+rule3,egress,-1,0,0,0.0.0.0/0,all outbound
+rule4,ingress,tcp,4500,4500,0.0.0.0/0,add port
